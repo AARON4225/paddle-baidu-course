@@ -123,7 +123,9 @@ def crawl_pic_urls():
         pic_urls = []
         for pic_html in pic_list_html:
             pic_url = pic_html.get('src')
-            pic_urls.append(pic_url)
+            pic_true = pic_url.split('?')
+            pic_true_url=pic_true[0]
+            pic_urls.append(pic_true_url)
             # ！！！根据图片链接列表pic_urls, 下载所有图片，保存在以name命名的文件夹中！！！
         down_pic(name, pic_urls)
 
